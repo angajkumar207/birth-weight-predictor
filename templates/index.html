@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Weight Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e0f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #006064;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #b2dfdb;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #0097a7;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+
+        h3 {
+            text-align: center;
+            color: #004d40;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <h1>Predict Birth Weight</h1>
+
+        <label for="Birth.Weight">Birth Weight</label>
+        <input id="Weight" name="Birth.Weight" type="number" required>
+
+        <label for="gestation">Gestational Days</label>
+        <input id="gestation" name="Gestational.Days" type="number" required>
+
+        <label for="age">Maternal Age</label>
+        <input id="age" name="Maternal.Age" type="number" required>
+
+        <label for="height">Maternal Height</label>
+        <input id="height" name="Maternal.Height" type="number" required>
+
+        <label for="weight">Maternal Pregnancy Weight</label>
+        <input id="weight" name="Maternal.Pregnancy.Weight" type="number" required>
+
+        <button type="submit">Predict Birth Weight</button>
+
+        <h3>Predicted Birth Weight: {{ prediction }}</h3>
+    </form>
+</body>
+</html>
